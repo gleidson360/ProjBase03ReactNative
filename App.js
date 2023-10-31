@@ -27,6 +27,15 @@ export default function App() {
           <Text> Longitude: { localizacao.coords.longitude } </Text>
           <Text> Altitude: { localizacao.coords.altitude } </Text>
         </View>
+
+        <MapView
+          initialRegion={{
+            latitude: localizacao.coords.latitude,
+            longitude: localizacao.coords.longitude,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01,
+          }}
+          style={ styles.mapa }/>
       </>
     }
   </View>
@@ -39,4 +48,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  tela: { 
+    flex: 1 
+  },
+  indicador: { 
+    backgroundColor: "#144272", padding: 32 
+  },
+  indicardorTexto: { 
+    color: "white", fontSize: 20 
+  },
+  mapa: { 
+    height: "100%", width: "100%" 
+  }
 });
