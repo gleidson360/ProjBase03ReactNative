@@ -16,16 +16,16 @@ export default function App() {
     ObterLocalizacao()
   }, [])
 
-  return <View>
+  return <View style={ styles.tela }>
     <StatusBar barStyle="light-content" backgroundColor="#144272"/>
 
     { Object.keys(localizacao).length > 0 &&
       <>
-        <View>
-          <Text> EXPLORAR NOVOS MAPAS </Text>
-          <Text> Latitude: { localizacao.coords.latitude } </Text>
-          <Text> Longitude: { localizacao.coords.longitude } </Text>
-          <Text> Altitude: { localizacao.coords.altitude } </Text>
+        <View style={ styles.indicador }>
+          <Text style={ styles.indicadorTexto }> EXPLORAR NOVOS MAPAS </Text>
+          <Text style={ styles.indicadorTexto }> Latitude: { localizacao.coords.latitude } </Text>
+          <Text style={ styles.indicadorTexto }> Longitude: { localizacao.coords.longitude } </Text>
+          <Text style={ styles.indicadorTexto }> Altitude: { localizacao.coords.altitude } </Text>
         </View>
 
         <MapView
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   indicador: { 
     backgroundColor: "#144272", padding: 32 
   },
-  indicardorTexto: { 
+  indicadorTexto: { 
     color: "white", fontSize: 20 
   },
   mapa: { 
