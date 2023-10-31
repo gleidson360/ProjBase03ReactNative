@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { View, Text, StatusBar, StyleSheet } from 'react-native';
-import MapView from "react-native-maps"
+import MapView, { Marker } from "react-native-maps"
 import * as Location from "expo-location"
 
 export default function App() {
@@ -35,7 +35,17 @@ export default function App() {
             latitudeDelta: 0.01,
             longitudeDelta: 0.01,
           }}
-          style={ styles.mapa }/>
+          style={ styles.mapa }>
+
+          <Marker 
+            key={ 0 }
+            coordinate={{
+            latitude: localizacao.coords.latitude,
+            longitude: localizacao.coords.longitude 
+            }}
+            title="Título"
+            description="Descrição" />
+          </MapView>
       </>
     }
   </View>
