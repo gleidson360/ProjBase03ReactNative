@@ -15,9 +15,20 @@ export default function App() {
 
     ObterLocalizacao()
   }, [])
-  
+
   return <View>
     <StatusBar barStyle="light-content" backgroundColor="#144272"/>
+
+    { Object.keys(localizacao).length > 0 &&
+      <>
+        <View>
+          <Text> EXPLORAR NOVOS MAPAS </Text>
+          <Text> Latitude: { localizacao.coords.latitude } </Text>
+          <Text> Longitude: { localizacao.coords.longitude } </Text>
+          <Text> Altitude: { localizacao.coords.altitude } </Text>
+        </View>
+      </>
+    }
   </View>
 }
 
